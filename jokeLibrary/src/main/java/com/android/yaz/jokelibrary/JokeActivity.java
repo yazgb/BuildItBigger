@@ -3,6 +3,7 @@ package com.android.yaz.jokelibrary;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -20,7 +21,7 @@ public class JokeActivity extends AppCompatActivity {
             String joke = intent.getStringExtra(JOKE_KEY);
 
             TextView jokeTextView = (TextView) findViewById(R.id.joke_tv);
-            if(joke != null && joke.length() != 0)
+            if(!TextUtils.isEmpty(joke))
                 jokeTextView.setText(joke);
         }
     }
